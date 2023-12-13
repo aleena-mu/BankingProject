@@ -102,7 +102,7 @@ public class BankingSystem {
                     System.out.println("\n............Account balance Is $"+account.getBalance()+"............\n");
                     break;
                 case 4:
-                    System.out.println("Exiting From Banking System....");
+                    System.out.println("\nExiting From Banking System....");
                     System.exit(0);
                 default:
                     System.out.println("Invalid choice. Please try again.");

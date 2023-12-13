@@ -35,12 +35,13 @@ public class AccountCreation {
         System.out.println("\tAccount Details\n\t________________\n\t");
         displayDetails(arr, bs.i);
         System.out.println("1:Continue to login\n2:Exit");
+        System.out.println("Enter The Option");
 
 
         if (sc.nextInt() == 1) {
             bs.login();
         } else {
-            System.out.println("Exiting From Banking System....");
+            System.out.println("\nExiting From Banking System....");
            System.exit(0);
         }
 
