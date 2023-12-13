@@ -1,7 +1,7 @@
 public class SavingsAccount extends BankAccount implements Transaction
 {
  double interest;
- double DepositAmount;
+
     public SavingsAccount(double iniatialbalance,double interest)
     {
         super(iniatialbalance);
@@ -10,13 +10,13 @@ public class SavingsAccount extends BankAccount implements Transaction
 
     @Override
     public void withdraw(double amount) {
-        System.out.println("Withdraw Amount is "+amount);
+        System.out.println("Withdrawing $ "+amount+"...");
         if (amount>balance)
         {
-            System.out.println("Insufficiant Balance");
+            System.out.println("\n----Insufficiant Balance----\n");
         }else {
             balance-=amount;
-            System.out.println("Withdrawl is Successfull");
+            System.out.println("\n............Successfully Withdrawn $"+amount+"............\n");
         }
 
     }
@@ -28,12 +28,13 @@ public class SavingsAccount extends BankAccount implements Transaction
 
     @Override
     public void deposit(double amount) {
-       System.out.println("Deposit Amount is "+amount );
-       System.out.println("Applicable Interest Rate : "+interest);
+
+
         if (amount>0)
         {
             balance+=amount;
-            System.out.println("Deposit SuccessFull");
+            System.out.println("\n............Successfully Deposited $"+amount+"............\n");
+            System.out.println("Applicable Interest Rate : "+interest);
         }else {
             System.out.println("Enter valid Amount");
         }

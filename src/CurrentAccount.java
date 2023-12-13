@@ -9,26 +9,26 @@ public class CurrentAccount extends BankAccount implements Transaction{
 
     @Override
     public void deposit(double amount) {
-        System.out.println("Deposit Amount is "+amount );
+
         if (amount>0)
         {
             balance+=amount;
-            System.out.println("Deposit SuccessFull");
+            System.out.println("\n............Successfully Deposited $"+amount+"............\n");
         }else {
-            System.out.println("Enter valid Amount");
+            System.out.println("\n----Enter valid Amount----\n");
         }
 
     }
 
     @Override
     public void withdraw(double amount) {
-        System.out.println("Withdraw Amount is "+amount);
-        if (overdraftlimit+balance>amount)
+        System.out.println("Withdrawing $"+amount);
+        if (overdraftlimit+balance<amount)
         {
-            System.out.println("Overdraft Limit Exceeded");
+            System.out.println("\n----Overdraft Limit Exceeded!Cannot Complete Transaction----\n");
         }else {
             balance-=amount;
-            System.out.println("Withdrawl is Successfull");
+            System.out.println("\n............Successfully Withdrawn $"+amount+"............\n");
         }
 
     }

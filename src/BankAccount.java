@@ -7,8 +7,5 @@ public class BankAccount  {
     }
 
 
-    public void displayBalance(){
 
-
-    }
 }

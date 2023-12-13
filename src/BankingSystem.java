@@ -55,7 +55,7 @@ public class BankingSystem {
         String acc = scanner.next();
         if (Objects.equals(ao, acc)) {
 
-            System.out.println("Enter Account Type for transaction.\n\t 1-Savings\n2-Current");
+            System.out.println("Enter Account Type for transaction.\n1-Savings\n2-Current");
 
             int accountType = scanner.nextInt();
             if (accountType == 1) {
@@ -76,8 +76,10 @@ public class BankingSystem {
     }
     private void performTransactions(Transaction account) {
         int choice;
+        System.out.println("______________\nWelcome To Transactions\n______________\n");
+
         while (true) {
-            System.out.println("______________\nWelcome To Transactions\n______________\n");
+
             System.out.println("1. Deposit");
             System.out.println("2. Withdraw");
             System.out.println("3. Display Balance");
@@ -97,10 +99,10 @@ public class BankingSystem {
                     account.withdraw(withdrawAmount);
                     break;
                 case 3:
-                    System.out.println(account.getBalance());
+                    System.out.println("\n............Account balance Is $"+account.getBalance()+"............\n");
                     break;
                 case 4:
-                    System.out.println("Exiting...");
+                    System.out.println("Exiting From Banking System....");
                     System.exit(0);
                 default:
                     System.out.println("Invalid choice. Please try again.");
