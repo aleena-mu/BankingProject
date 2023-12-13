@@ -31,9 +31,10 @@ public class AccountCreation {
 
         bs.cu[bs.i] = arr[bs.i];
 
-        System.out.println("Account created Successfully\n*************************\n\t ");
+        System.out.println("\n............................\nAccount created Successfully\n............................\n");
+        System.out.println("\tAccount Details\n\t________________\n\t");
         displayDetails(arr, bs.i);
-        System.out.println("\t 1: Continue to transaction\n\t2: Exit");
+        System.out.println("1:Continue to transaction\n2:Exit");
 
         if (sc.nextInt() == 1) {
             bs.login();
@@ -50,7 +51,7 @@ public class AccountCreation {
     }
 
     public void displayDetails(Customer arr[], int k) {
-        System.out.println("Name: " + arr[k].getCustName() + "\n\tPhone: " + arr[k].getMobNo() + "\n\tAddress: "
+        System.out.println("\tName: " + arr[k].getCustName() + "\n\tPhone: " + arr[k].getMobNo() + "\n\tAddress: "
                 + arr[k].getAddr() + "\n\tAccount Number: " + arr[k].getacc() + "\n");
     }
 }
