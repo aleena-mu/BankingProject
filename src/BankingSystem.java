@@ -62,7 +62,7 @@ public class BankingSystem {
                 SavingsAccount savingsAccount = new SavingsAccount(1000, 2.5);
                 performTransactions(savingsAccount);
             } else if (accountType == 2) {
-                CurrentAccount currentAccount = new CurrentAccount(500, 100);
+                CurrentAccount currentAccount = new CurrentAccount(1000, 100);
                 performTransactions(currentAccount);
             } else {
                 System.out.println("invalid input");
