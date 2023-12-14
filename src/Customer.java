@@ -1,5 +1,6 @@
 
-
+import java.util.Scanner;
+import java.util.regex.*;
 public class Customer {
 
     private String custName;
@@ -25,7 +26,17 @@ public class Customer {
         return mobNo;
     }
     public void setMobNo(String mobNo) {
-        this.mobNo = mobNo;
+        if (Validation(mobNo))
+        {
+            this.mobNo = mobNo;
+        }
+       else {
+           System.out.println("Enter valid mobile number");
+
+            Scanner sc=new Scanner(System.in);
+            mobNo= sc.next();
+           setMobNo(mobNo);
+        }
     }
     public String getacc() {
         return acc;
@@ -38,6 +49,13 @@ public class Customer {
     }
     public void setAddr(String addr) {
         this.addr = addr;
+    }
+
+    public boolean Validation(String str)
+    {
+        Pattern ptrn = Pattern.compile("(0/91)?[7-9][0-9]{9}");
+        Matcher match = ptrn.matcher(str);
+        return (match.find() && match.group().equals(str));
     }
 }
  
