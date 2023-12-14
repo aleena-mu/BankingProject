@@ -24,6 +24,7 @@ public class AccountCreation {
         arr[bs.i].setAddr(address);
 
         System.out.println("Enter Phone Number");
+
         phone = sc.next();
         arr[bs.i].setMobNo(phone);
 
@@ -31,23 +32,32 @@ public class AccountCreation {
         arr[bs.i].setacc(accNo);
 
         bs.cu[bs.i] = arr[bs.i];
+        System.out.println("Deposit $1000 as initial balance for opening the account. \n1.Yes\n2.Exit from Account creation");
+        int x = sc.nextInt();
+        if (x == 1) {
+            System.out.println("\n............................\nAccount created Successfully\n............................\n");
+            System.out.println("\tAccount Details\n\t________________\n\t");
+            displayDetails(arr, bs.i);
+            System.out.println("1:Continue to login\n2:Exit");
+            System.out.println("Enter The Option");
 
-        System.out.println("\n............................\nAccount created Successfully\n............................\n");
-        System.out.println("\tAccount Details\n\t________________\n\t");
-        displayDetails(arr, bs.i);
-        System.out.println("1:Continue to login\n2:Exit");
-        System.out.println("Enter The Option");
 
+            if (sc.nextInt() == 1) {
+                bs.login();
+            } else {
+                System.out.println("\nExiting From Banking System....");
+                System.exit(0);
+            }
 
-        if (sc.nextInt() == 1) {
-            bs.login();
-        } else {
+            return arr[bs.i];
+        } else
+        {
             System.out.println("\nExiting From Banking System....");
-           System.exit(0);
+            System.exit(0);
         }
-
-        return arr[bs.i];
+return null;
     }
+
 
     public static String generateAccountNumber() {
         String uuid = UUID.randomUUID().toString().replaceAll("-", "");
