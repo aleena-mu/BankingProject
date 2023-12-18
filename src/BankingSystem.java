@@ -16,30 +16,30 @@ public class BankingSystem {
         AccountCreation ac = new AccountCreation(this);
         int choice;
 
-        while (true) {
-            System.out.println("1. Create Account");
-            System.out.println("2. Login\nEnter an option(1/2):");
-            choice = scanner.nextInt();
 
-            switch (choice) {
-                case 1:
-                    ac.details(cu);
-                    break;
-                case 2:
-                    if (cu[i] == null) {
-                        System.out.println("----Create an account first----\n");
-                        initial();
-                    } else {
-                        login();
-                        break;
-                    }
-                    break;
-                default:
-                    System.out.println("----Enter valid input----");
+        System.out.println("1. Create Account");
+        System.out.println("2. Login\nEnter an option(1 OR 2):");
+        choice = scanner.nextInt();
+
+        switch (choice) {
+            case 1:
+                ac.details(cu);
+                break;
+            case 2:
+                if (cu[i] == null) {
+                    System.out.println("----Create an account first----\n");
                     initial();
-            }
-            break;
+                } else {
+                    login();
+                    break;
+                }
+                break;
+            default:
+                System.out.println("----Enter valid input----");
+                initial();
         }
+
+
     }
 
     public void login() {
@@ -49,7 +49,7 @@ public class BankingSystem {
         System.out.println("______________\nWelcome To Login\n______________\n");
 
 
-        String ao=cu[i].getacc();
+        String ao = cu[i].getacc();
 
         System.out.println(ao);
         System.out.println("Enter Account Number:");
@@ -75,6 +75,7 @@ public class BankingSystem {
 
         }
     }
+
     private void performTransactions(Transaction account) {
         int choice;
         System.out.println("______________\nWelcome To Transactions\n______________\n");
@@ -90,23 +91,23 @@ public class BankingSystem {
 
             switch (choice) {
                 case 1:
-                    System.out.print("Enter deposit amount: $");
+                    System.out.print("Enter deposit amount: RS.");
                     double depositAmount = scanner.nextDouble();
                     account.deposit(depositAmount);
                     break;
                 case 2:
-                    System.out.print("Enter withdrawal amount: $");
+                    System.out.print("Enter withdrawal amount: RS.");
                     double withdrawAmount = scanner.nextDouble();
                     account.withdraw(withdrawAmount);
                     break;
                 case 3:
-                    System.out.println("\n............Account balance Is $"+account.getBalance()+"............\n");
+                    System.out.println("\n............Account balance Is RS." + account.getBalance() + "............\n");
                     break;
                 case 4:
                     System.out.println("\nExiting From Banking System....");
                     System.exit(0);
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    System.out.println("----Invalid choice. Please try again.----");
             }
         }
     }

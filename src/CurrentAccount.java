@@ -1,20 +1,19 @@
-public class CurrentAccount extends BankAccount implements Transaction{
-     double overdraftlimit;
-    public CurrentAccount(double iniatialbalance,double overdraftlimit)
-    {
+public class CurrentAccount extends BankAccount implements Transaction {
+    double overdraftlimit;
+
+    public CurrentAccount(double iniatialbalance, double overdraftlimit) {
         super(iniatialbalance);
-        this.overdraftlimit=overdraftlimit;
+        this.overdraftlimit = overdraftlimit;
     }
 
 
     @Override
     public void deposit(double amount) {
 
-        if (amount>0)
-        {
-            balance+=amount;
-            System.out.println("\n............Successfully Deposited $"+amount+"............\n");
-        }else {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("\n............Successfully Deposited $" + amount + "............\n");
+        } else {
             System.out.println("\n----Enter valid Amount----\n");
         }
 
@@ -22,13 +21,12 @@ public class CurrentAccount extends BankAccount implements Transaction{
 
     @Override
     public void withdraw(double amount) {
-        System.out.println("Withdrawing $"+amount);
-        if (overdraftlimit+balance<amount)
-        {
+        System.out.println("Withdrawing $" + amount);
+        if (overdraftlimit + balance < amount) {
             System.out.println("\n----Overdraft Limit Exceeded!Cannot Complete Transaction----\n");
-        }else {
-            balance-=amount;
-            System.out.println("\n............Successfully Withdrawn $"+amount+"............\n");
+        } else {
+            balance -= amount;
+            System.out.println("\n............Successfully Withdrawn $" + amount + "............\n");
         }
 
     }
@@ -39,4 +37,4 @@ public class CurrentAccount extends BankAccount implements Transaction{
     }
 
 
-    }
+}

@@ -39,7 +39,7 @@ public class AccountCreation {
             System.out.println("\tAccount Details\n\t________________\n\t");
             displayDetails(arr, bs.i);
             System.out.println("1:Continue to login\n2:Exit");
-            System.out.println("Enter The Option");
+            System.out.println("Enter The Option(1 or 2");
 
 
             if (sc.nextInt() == 1) {
@@ -50,12 +50,11 @@ public class AccountCreation {
             }
 
             return arr[bs.i];
-        } else
-        {
+        } else {
             System.out.println("\nExiting From Banking System....");
             System.exit(0);
         }
-return null;
+        return null;
     }
 
 
