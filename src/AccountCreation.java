@@ -29,7 +29,7 @@ public class AccountCreation {
         customers[bankingSystem.i].setMobileNumber(phone);
 
         accountNumber = generateAccountNumber();
-        customers[bankingSystem.i].setacc(accountNumber);
+        customers[bankingSystem.i].setAccountNumber(accountNumber);
 
         bankingSystem.customer[bankingSystem.i] = customers[bankingSystem.i];
         System.out.println("Deposit $1000 as initial balance for opening the account. \n1.Yes\n2.Exit from Account creation");
