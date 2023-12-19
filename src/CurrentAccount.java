@@ -21,7 +21,7 @@ public class CurrentAccount extends BankAccount implements Transaction {
 
     @Override
     public void withdraw(double amount) {
-        System.out.println("Withdrawing $" + amount);
+        System.out.println("Withdrawing RS." + amount);
         if (overdraftlimit + balance < amount) {
             System.out.println("\n----Overdraft Limit Exceeded!Cannot Complete Transaction----\n");
         } else {
