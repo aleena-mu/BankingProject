@@ -3,55 +3,55 @@ import java.util.Scanner;
 import java.util.regex.*;
 public class Customer {
 
-    private String custName;
-    private String mobNo;
-    private String acc;
-    private String addr;
-    public Customer( String custName, String mobNo, String acc, String addr) {
+    private String customerName;
+    private String mobileNumber;
+    private String accountNumber;
+    private String address;
+    public Customer( String customerName, String mobileNumber, String accountNumber, String address) {
 
 
-        this.custName = custName;
-        this.mobNo = mobNo;
-        this.acc = acc;
-        this.addr = addr;
+        this.customerName = customerName;
+        this.mobileNumber = mobileNumber;
+        this.accountNumber = accountNumber;
+        this.address = address;
     }
 
-    public String getCustName() {
-        return custName;
+    public String getCustomerName() {
+        return customerName;
     }
-    public void setCustName(String custName) {
-        this.custName = custName;
+    public void setCustomerName(String custName) {
+        this.customerName = customerName;
     }
-    public String getMobNo() {
-        return mobNo;
+    public String getMobileNumber() {
+        return mobileNumber;
     }
-    public void setMobNo(String mobNo) {
-        if (Validation(mobNo))
+    public void setMobileNumber(String mobileNumber) {
+        if (validation(mobileNumber))
         {
-            this.mobNo = mobNo;
+            this.mobileNumber = mobileNumber;
         }
        else {
            System.out.println("Enter valid mobile number");
 
             Scanner sc=new Scanner(System.in);
-            mobNo= sc.next();
-           setMobNo(mobNo);
+            mobileNumber= sc.next();
+           setMobileNumber(mobileNumber);
         }
     }
-    public String getacc() {
-        return acc;
+    public String getAccountNumber() {
+        return accountNumber;
     }
-    public void setacc(String acc) {
-        this.acc = acc;
+    public void setAccountNumber(String acc) {
+        this.accountNumber = accountNumber;
     }
-    public String getAddr() {
-        return addr;
+    public String getAddress() {
+        return address;
     }
-    public void setAddr(String addr) {
-        this.addr = addr;
+    public void setAddress(String addr) {
+        this.address = addr;
     }
 
-    public boolean Validation(String str)
+    public boolean validation(String str)
     {
         Pattern ptrn = Pattern.compile("[6-9][0-9]{9}");
         Matcher match = ptrn.matcher(str);

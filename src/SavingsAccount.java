@@ -29,7 +29,7 @@ public class SavingsAccount extends BankAccount implements Transaction {
 
         if (amount > 0) {
             balance += amount;
-            System.out.println("\n............Successfully Deposited $" + amount + "............\n");
+            System.out.println("\n............Successfully Deposited RS." + amount + "............\n");
             System.out.println("Applicable Interest Rate : " + interest);
         } else {
             System.out.println("\n----Enter Valid Amount----\n");

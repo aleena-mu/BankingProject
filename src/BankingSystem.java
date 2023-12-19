@@ -3,13 +3,13 @@ import java.util.Scanner;
 
 public class BankingSystem {
     Scanner scanner = new Scanner(System.in);
-    Customer[] cu = new Customer[10];
+    Customer[] customer = new Customer[10];
     int i = 0;
 
     public static void main(String[] args) {
         System.out.println("***************\nBanking App\n***************\n");
-        BankingSystem bs = new BankingSystem();
-        bs.initial();
+        BankingSystem bankingSystem = new BankingSystem();
+        bankingSystem.initial();
     }
 
     public void initial() {
@@ -23,10 +23,10 @@ public class BankingSystem {
 
         switch (choice) {
             case 1:
-                ac.details(cu);
+                ac.details(customer);
                 break;
             case 2:
-                if (cu[i] == null) {
+                if (customer[i] == null) {
                     System.out.println("----Create an account first----\n");
                     initial();
                 } else {
@@ -49,7 +49,7 @@ public class BankingSystem {
         System.out.println("______________\nWelcome To Login\n______________\n");
 
 
-        String ao = cu[i].getacc();
+        String ao = customer[i].getAccountNumber();
 
         System.out.println(ao);
         System.out.println("Enter Account Number:");
