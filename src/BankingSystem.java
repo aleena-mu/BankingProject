@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class BankingSystem {
     Scanner scanner = new Scanner(System.in);
     Customer[] customer = new Customer[10];
+
     int i = 0;
 
     public static void main(String[] args) {

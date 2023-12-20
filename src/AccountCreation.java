@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Set;
 import java.util.UUID;
 
 
@@ -22,11 +23,20 @@ public class AccountCreation {
         System.out.println("Enter Address");
         address = scanner.next();
         customers[bankingSystem.i].setAddress(address);
-
         System.out.println("Enter Phone Number");
+            phone = scanner.next();
+            if (c.validation(phone)) {
+                customers[bankingSystem.i].setMobileNumber(phone);
+            } else {
+                do {
+                    System.out.println("Enter valid mobile number");
+                    phone = scanner.next();
+                }while (!c.validation(phone));
 
-        phone = scanner.next();
-        customers[bankingSystem.i].setMobileNumber(phone);
+
+            }
+
+
 
         accountNumber = generateAccountNumber();
         customers[bankingSystem.i].setAccountNumber(accountNumber);

@@ -1,9 +1,9 @@
 public class CurrentAccount extends BankAccount implements Transaction {
-    double overdraftlimit;
+    double OverdraftLimit;
 
-    public CurrentAccount(double iniatialbalance, double overdraftlimit) {
-        super(iniatialbalance);
-        this.overdraftlimit = overdraftlimit;
+    public CurrentAccount(double IniatialBalance, double OverdraftLimit) {
+        super(IniatialBalance);
+        this.OverdraftLimit = OverdraftLimit;
     }
 
 
@@ -22,7 +22,7 @@ public class CurrentAccount extends BankAccount implements Transaction {
     @Override
     public void withdraw(double amount) {
         System.out.println("Withdrawing RS." + amount);
-        if (overdraftlimit + balance < amount) {
+        if (OverdraftLimit + balance < amount) {
             System.out.println("\n----Overdraft Limit Exceeded!Cannot Complete Transaction----\n");
         } else {
             balance -= amount;

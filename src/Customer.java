@@ -1,5 +1,3 @@
-
-import java.util.Scanner;
 import java.util.regex.*;
 public class Customer {
 
@@ -16,6 +14,7 @@ public class Customer {
         this.address = address;
     }
 
+
     public String getCustomerName() {
         return customerName;
     }
@@ -26,17 +25,7 @@ public class Customer {
         return mobileNumber;
     }
     public void setMobileNumber(String mobileNumber) {
-        if (validation(mobileNumber))
-        {
-            this.mobileNumber = mobileNumber;
-        }
-       else {
-           System.out.println("Enter valid mobile number");
-
-            Scanner sc=new Scanner(System.in);
-            mobileNumber= sc.next();
-           setMobileNumber(mobileNumber);
-        }
+        this.mobileNumber = mobileNumber;
     }
     public String getAccountNumber() {
         return accountNumber;
@@ -56,6 +45,7 @@ public class Customer {
         Pattern ptrn = Pattern.compile("[6-9][0-9]{9}");
         Matcher match = ptrn.matcher(str);
         return (match.find() && match.group().equals(str));
+
     }
 }
  
