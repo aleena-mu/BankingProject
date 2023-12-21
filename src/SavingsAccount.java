@@ -1,8 +1,8 @@
 public class SavingsAccount extends BankAccount implements Transaction {
     double interest;
 
-    public SavingsAccount(double iniatialbalance, double interest) {
-        super(iniatialbalance);
+    public SavingsAccount(double initialBalance, double interest) {
+        super(initialBalance);
         this.interest = interest;
     }
 

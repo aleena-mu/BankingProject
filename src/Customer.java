@@ -5,14 +5,6 @@ public class Customer {
     private String mobileNumber;
     private String accountNumber;
     private String address;
-//    public Customer( String customerName, String mobileNumber, String accountNumber, String address) {
-//
-//
-//        this.customerName = customerName;
-//        this.mobileNumber = mobileNumber;
-//        this.accountNumber = accountNumber;
-//        this.address = address;
-//    }
 
 
     public String getCustomerName() {

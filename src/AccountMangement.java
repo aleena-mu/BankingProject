@@ -1,16 +1,16 @@
 import java.util.*;
 
 
-public class AccountCreation {
+public class AccountMangement {
     Scanner scanner = new Scanner(System.in);
     BankingSystem bankingSystem;
-    List<Customer> customerList = new ArrayList<>();
-int i=0;
-    public AccountCreation(BankingSystem bankingSystem) {
+
+//int i=0;
+    public AccountMangement(BankingSystem bankingSystem) {
         this.bankingSystem = bankingSystem;
     }
 
-    public void details() {
+    public Customer accountCreation() {
         Customer customer = new Customer();
         String name, accountNumber, address, phone;
 
@@ -23,7 +23,8 @@ int i=0;
         System.out.println("Enter Mobile Number");
         phone=scanner.next();
         if (customer.validation(phone)) {
-           System.out.println("");
+           System.out.println();
+
         }
         else
         { do {
@@ -33,18 +34,17 @@ int i=0;
         }
 
         accountNumber = generateAccountNumber();
-        customer.setAccountNumber(accountNumber);
 
-        System.out.println("Deposit $1000 as initial balance for opening the account. \n1.Yes\n2.Exit from Account creation");
+        System.out.println("Deposit RS.1000 as initial balance for opening the account. \n1.Yes\n2.Exit from Account creation");
         int x = scanner.nextInt();
         if (x == 1)
         {
-            Customer customers=new Customer();
-            customers.setAccountNumber(accountNumber);
-            customers.setCustomerName(name);
-            customers.setMobileNumber(phone);
-            customers.setAddress(address);
-            customerList.add(i,customers);
+
+            customer.setAccountNumber(accountNumber);
+            customer.setCustomerName(name);
+            customer.setMobileNumber(phone);
+            customer.setAddress(address);
+            //customerList.add(i,customers);
             System.out.println("\n............................\nAccount created Successfully\n............................\n");
             String s=customerList.get(i).getAccountNumber();
             System.out.println("Your Account Number: "+s);
@@ -57,7 +57,7 @@ int i=0;
                         break;
                     case 2:
                         i++;
-                        bankingSystem.initial();
+                        bankingSystem.start();
                         break;
                     case 3:
                         i++;
@@ -73,6 +73,7 @@ int i=0;
             System.out.println("\nExiting From Banking System....");
             System.exit(0);
         }
+        return customer;
     }
 
 
@@ -109,7 +110,7 @@ int i=0;
 
         }
             System.out.println("----Invalid Account Number.Authentication Failed!----");
-            bankingSystem. initial();
+            bankingSystem.start();
     }
     private void performTransactions(Transaction account,String accountNumber) {
         int choice;

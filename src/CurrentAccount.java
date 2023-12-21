@@ -1,8 +1,8 @@
 public class CurrentAccount extends BankAccount implements Transaction {
     double OverdraftLimit;
 
-    public CurrentAccount(double IniatialBalance, double OverdraftLimit) {
-        super(IniatialBalance);
+    public CurrentAccount(double InitialBalance, double OverdraftLimit) {
+        super(InitialBalance);
         this.OverdraftLimit = OverdraftLimit;
     }
 

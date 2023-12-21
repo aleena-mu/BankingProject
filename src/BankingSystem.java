@@ -3,16 +3,22 @@ import java.util.*;
 
 public class BankingSystem {
     Scanner scanner = new Scanner(System.in);
-    AccountCreation ac = new AccountCreation(this);
+    AccountMangement accountManagement = new AccountMangement(this);
+    List<Customer> customerList = new ArrayList<>();
+    int i=0;
+ private static BankingSystem instance;
+private  BankingSystem(){
 
+}
 
-    public static void main(String[] args) {
-        System.out.println("***************\nBanking App\n***************\n");
-        BankingSystem bankingSystem = new BankingSystem();
-        bankingSystem.initial();
+public static BankingSystem getInstance(){
+    if(instance==null){
+        instance=new BankingSystem();
     }
+    return instance;
+}
 
-    public void initial() {
+    public void start() {
 
         int choice;
 
@@ -23,20 +29,22 @@ public class BankingSystem {
 
         switch (choice) {
             case 1:
-                 ac.details();
+                 customerList.add(accountManagement.accountCreation());
+                 i++;
+
                 break;
             case 2:
-                if (ac.customerList.isEmpty()) {
+                if (customerList.isEmpty()) {
                     System.out.println("----Create an account first----\n");
-                    initial();
+                    start();
                 } else {
-                   ac. login();
+                   accountManagement. login();
                     break;
                 }
                 break;
             default:
                 System.out.println("----Enter valid input----");
-                initial();
+                start();
                 break;
         }
 
