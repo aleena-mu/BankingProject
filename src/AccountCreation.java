@@ -52,16 +52,16 @@ int i=0;
             System.out.println("\n............................\nAccount created Successfully\n............................\n");
             System.out.println("\tAccount Details\n\t________________\n\t");
             display(i);
-            System.out.println("1:Continue to login\n2:Exit");
+            System.out.println("1:Continue to login\n2:Go Back\n3.Exit");
             System.out.println("Enter The Option");
-            if (scanner.nextInt() == 1) {
-                login();
-            }
-            else
+            switch (scanner.nextInt())
             {
-                i++;
-                System.out.println("\nExiting From Banking System....");
-                System.exit(0);
+                case 1: login();
+                        break;
+                case 2: i++;
+                        bankingSystem.initial();
+                default:   System.out.println("\nExiting From Banking System....");
+                    System.exit(0);
             }
 
         }
@@ -128,7 +128,8 @@ int flag=0;
             System.out.println("1. Deposit");
             System.out.println("2. Withdraw");
             System.out.println("3. Display Balance");
-            System.out.println("4. Exit");
+            System.out.println("4.Account Details");
+            System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
 
@@ -147,8 +148,11 @@ int flag=0;
                     System.out.println("\n............Account balance Is RS." + account.getBalance() + "............\n");
                     break;
                 case 4:
+                     display(i);
+                case 5:
                     System.out.println("\nExiting From Banking System....");
                     System.exit(0);
+
                 default:
                     System.out.println("----Invalid choice. Please try again.----");
             }
