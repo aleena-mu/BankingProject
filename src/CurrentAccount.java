@@ -12,7 +12,7 @@ public class CurrentAccount extends BankAccount implements Transaction {
 
         if (amount > 0) {
             balance += amount;
-            System.out.println("\n............Successfully Deposited $" + amount + "............\n");
+            System.out.println("\n............Successfully Deposited RS." + amount + "............\n");
         } else {
             System.out.println("\n----Enter valid Amount----\n");
         }
@@ -26,7 +26,7 @@ public class CurrentAccount extends BankAccount implements Transaction {
             System.out.println("\n----Overdraft Limit Exceeded!Cannot Complete Transaction----\n");
         } else {
             balance -= amount;
-            System.out.println("\n............Successfully Withdrawn $" + amount + "............\n");
+            System.out.println("\n............Successfully Withdrawn RS." + amount + "............\n");
         }
 
     }

@@ -8,12 +8,12 @@ public class SavingsAccount extends BankAccount implements Transaction {
 
     @Override
     public void withdraw(double amount) {
-        System.out.println("Withdrawing $ " + amount + "...");
+        System.out.println("Withdrawing RS. " + amount + "...");
         if (amount > balance) {
             System.out.println("\n----Insufficient Balance----\n");
         } else {
             balance -= amount;
-            System.out.println("\n............Successfully Withdrawn $" + amount + "............\n");
+            System.out.println("\n............Successfully Withdrawn RS." + amount + "............\n");
         }
 
     }

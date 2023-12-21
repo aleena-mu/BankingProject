@@ -37,6 +37,7 @@ public class BankingSystem {
             default:
                 System.out.println("----Enter valid input----");
                 initial();
+                break;
         }
 
 
