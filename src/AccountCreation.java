@@ -82,15 +82,12 @@ int i=0;
     }
 
     public void login() {
-
         System.out.println("______________\nWelcome To Login\n______________\n");
         System.out.println("Enter Account Number:");
         String acc = scanner.next();
         //String s;
-        for ( int n=0;n<customerList.size();)
-        {
-            if (Objects.equals(acc, customerList.get(n).getAccountNumber()))
-            {
+        for (Customer customer : customerList) {
+            if (Objects.equals(acc, customer.getAccountNumber())) {
 
                 while (true) {
                     System.out.println("Enter Account Type for transaction.\n1:Savings\n2:Current\nEnter 1 or 2\n");
@@ -109,12 +106,10 @@ int i=0;
                     }
                 }
             }
-            n++;
-        }
 
+        }
             System.out.println("----Invalid Account Number.Authentication Failed!----");
             bankingSystem. initial();
-
     }
     private void performTransactions(Transaction account,String accountNumber) {
         int choice;
