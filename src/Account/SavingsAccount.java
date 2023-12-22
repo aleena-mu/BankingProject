@@ -1,3 +1,7 @@
+package Account;
+
+import Account.BankAccount;
+
 public class SavingsAccount extends BankAccount implements Transaction {
     double interest;
 
@@ -18,21 +22,5 @@ public class SavingsAccount extends BankAccount implements Transaction {
 
     }
 
-    @Override
-    public double getBalance() {
-        return balance;
-    }
 
-    @Override
-    public void deposit(double amount) {
-
-
-        if (amount > 0) {
-            balance += amount;
-            System.out.println("\n............Successfully Deposited RS." + amount + "............\n");
-            System.out.println("Applicable Interest Rate : " + interest);
-        } else {
-            System.out.println("\n----Enter Valid Amount----\n");
-        }
-    }
 }

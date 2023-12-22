@@ -1,3 +1,7 @@
+package CustomerPackage;
+
+import Account.BankAccount;
+
 import java.util.regex.*;
 public class Customer {
 
@@ -5,6 +9,7 @@ public class Customer {
     private String mobileNumber;
     private String accountNumber;
     private String address;
+    private BankAccount savingsAccount,currentAccount;
 
 
     public String getCustomerName() {
@@ -32,11 +37,36 @@ public class Customer {
         this.address = address;
     }
 
+    public BankAccount getSavingsAccount() {
+        return savingsAccount;
+    }
+
+    public void setSavingsAccount(BankAccount savingsAccount) {
+        this.savingsAccount = savingsAccount;
+    }
+
+    public BankAccount getCurrentAccount() {
+        return currentAccount;
+    }
+
+    public void setCurrentAccount(BankAccount currentAccount) {
+        this.currentAccount = currentAccount;
+    }
+
     public boolean validation(String str)
     {
         Pattern pattern= Pattern.compile("[6-9][0-9]{9}");
         Matcher match = pattern.matcher(str);
         return (match.find() && match.group().equals(str));
+
+    }
+
+
+    public void dispaly(){
+        System.out.println("********ACCOUNT DETAILS********");
+        System.out.println("\tAccount Holder: " +getCustomerName() + "\n\tPhone: " + getMobileNumber() + "\n\tAddress: "
+                + getAddress() + "\n\tAccount Number: " + getAccountNumber() + "\n");
+
 
     }
 }

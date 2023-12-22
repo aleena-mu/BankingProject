@@ -1,3 +1,5 @@
+package Account;
+
 public interface Transaction {
 
         void deposit(double amount);

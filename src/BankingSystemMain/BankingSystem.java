@@ -1,15 +1,17 @@
+package BankingSystemMain;
+
 import java.util.*;
 
 
 public class BankingSystem {
     Scanner scanner = new Scanner(System.in);
-    AccountMangement accountManagement = new AccountMangement(this);
-    List<Customer> customerList = new ArrayList<>();
+    AccountManager accountManagement = new AccountManager();
+    public static final int OVERDRAFT_LIMIT=100;
+    public static final double SAVINGS_INTEREST=2.5;
+
     int i=0;
  private static BankingSystem instance;
-private  BankingSystem(){
-
-}
+private  BankingSystem(){}
 
 public static BankingSystem getInstance(){
     if(instance==null){
@@ -24,24 +26,21 @@ public static BankingSystem getInstance(){
 
 
         System.out.println("1. Create Account");
-        System.out.println("2. Login\nEnter an option(1 OR 2):");
+        System.out.println("2. Login\n3.Exit\nEnter an option:");
         choice = scanner.nextInt();
 
         switch (choice) {
             case 1:
-                 customerList.add(accountManagement.accountCreation());
-                 i++;
+                accountManagement.accountCreation();
+
 
                 break;
             case 2:
-                if (customerList.isEmpty()) {
-                    System.out.println("----Create an account first----\n");
-                    start();
-                } else {
-                   accountManagement. login();
+
+                   accountManagement.login();
                     break;
-                }
-                break;
+            case 3:System.exit(0);
+
             default:
                 System.out.println("----Enter valid input----");
                 start();
